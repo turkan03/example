@@ -1,0 +1,73 @@
+doctype html
+html 
+    head
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title My travel
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet")
+        link(href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet")
+        link(href="./css/reset.css", rel="stylesheet")
+        link(href="./css/index.css", rel="stylesheet")
+    body
+        header.header
+            .content
+                nav.nav
+                    .navLeft
+                        a.navLogo(href="/")
+                            img(src="./img/map.svg" alt="My travel")
+                        ul.mainNav
+                            each item in ['Home', 'Pricing', 'Events', 'Contacts']
+                                li.mainNavItem
+                                    a.mainNavLink(href="/")= item
+                    .navRight
+                        button.button.buttonWhite Get Started
+        main.main
+            .content 
+                section.sectionMain
+                    .sectionAbsolute
+                        .hgroup
+                            h2.hgroupSubtitle A&nbsp;life time experience
+                            h1.hgroupTitle Norway Time<br/>To&nbsp;Remember
+                        button.button.buttonBrown
+                            | Explore locations
+                    #parallax.parallax
+                        img(src="./img/parallax/01.jpg" alt="Layer 1" data-depth="0")
+                        img(src="./img/parallax/02.png" alt="Layer 2" data-depth="0.2")
+                        img(src="./img/parallax/03.png" alt="Layer 3" data-depth="0.4")
+                        img(src="./img/parallax/04.png" alt="Layer 4" data-depth="0.6")
+                        img(src="./img/parallax/05.png" alt="Layer 5" data-depth="0.8")
+                        img(src="./img/parallax/06.png" alt="Layer 6" data-depth="1")
+                section
+                    h2 Travel experience
+                    p Summary about the&nbsp;travel
+                    ul.icons#icons
+                        li.iconsItem#icon
+                            include includes/backpack.pug
+                        li.iconsItem
+                            include includes/mountains.pug
+                        li.iconsItem
+                            include includes/boat.pug
+                        li.iconsItem
+                            include includes/tourist.pug
+                        li.iconsItem
+                            include includes/control.pug
+            section.sectionWhite
+                .content
+                    h2 Gallery
+                    p Summary about the&nbsp;travel  
+                    ul.gallery
+                        li.galleryItem.jsBounceLeft.jsAnimatable
+                            img(src=`./img/gallery/image1.jpg` alt=`image1`)
+                        li.galleryItem.jsBounceRight.jsAnimatable
+                            img(src=`./img/gallery/image2.jpg` alt=`image2`)
+                        li.galleryItem.jsBounceLeft.jsAnimatable
+                            img(src=`./img/gallery/image3.jpg` alt=`image3`)
+                        li.galleryItem.jsBounceRight.jsAnimatable
+                            img(src=`./img/gallery/image4.jpg` alt=`image4`)
+        footer.footer
+            .content
+                p.copyright @KirJS &amp;&nbsp;Elena Litvinova collaboration, Illustration was drawn by&nbsp;lesson Art With FLo
+        script(src="./js/scroll-animation.js")
+        script(src="./js/parallax.js")
+        script(src="./js/svg-animation.js")
